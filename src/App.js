@@ -1,13 +1,15 @@
-import './App.css';
-import Comment from './components/Comment';
-import Reply from './components/Reply';
+import "./App.css";
+import Comment from "./components/Comment";
+import Reply from "./components/Reply";
 
 function App() {
   return (
-    <>
-    <Comment />
-    <Reply />
-    </>
+    <div className="App">
+      <div className="container">
+        <Comment />
+        <Reply />
+      </div>
+    </div>
   );
 }
 

@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-moderate-blue: hsl(238, 40%, 52%);
+  --color-soft-red: hsl(358, 79%, 66%);
+  --color-light-grayish-blue: hsl(239, 57%, 85%);
+  --color-pale-red: hsl(357, 100%, 86%);
+
+  --color-dark-blue: hsl(212, 24%, 26%);
+  --color-grayish-blue: hsl(211, 10%, 45%);
+  --color-light-gray: hsl(223, 19%, 93%);
+  --color-very-light-gray: hsl(228, 33%, 97%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--color-very-light-gray);
+}
+
+html {
+  font-family: "Rubik" sans-serif;
+  font-size: 16px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.container {
+  width: 60%;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background-color: var(--color-white);
+  padding: 1rem;
+}
+
+.plus-minus {
+  background-color: var(--color-very-light-gray);
+  border-radius: 0.3rem;
+  width: 4rem;
+  height: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.plus-minus button {
+  border: none;
+  background: none;
+  color: var(--color-light-grayish-blue);
+  cursor: pointer;
+}
+
+.plus-minus p {
+  color: var(--color-moderate-blue);
+  font-weight: 500;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user img {
+  width: 2rem;
+}
+
+.username {
+  color: var(--color-dark-blue);
+  font-weight: 700;
+}
+
+.createdAt {
+  color: var(--color-grayish-blue);
+  font-weight: 500;
+}
+
+.reply-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.reply {
+  color: var(--color-moderate-blue);
+  font-weight: 700;
+}
+
+.text {
+  padding: 1rem 0;
+  color: var(--color-grayish-blue);
+  font-weight: 500;
+}
+
+.comment-conversation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 90%;
+}
+
+.line-break {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.hr {
+  background-color: var(--color-light-gray);
+  border: none;
+}
