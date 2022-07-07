@@ -90,7 +90,9 @@ html {
   justify-content: space-between;
 }
 
-.user img {
+.user img,
+.comment img,
+.comment-reply img {
   width: 2rem;
 }
 
@@ -110,6 +112,11 @@ html {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+}
+
+.reply-button img,
+.modify-comment img {
+  transform: scale(0.5);
 }
 
 .reply {
@@ -142,7 +149,76 @@ html {
   justify-content: center;
 }
 
-.hr {
+hr {
   background-color: var(--color-light-gray);
   border: none;
+  width: 2px;
+}
+
+.comment-reply {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--color-white);
+  padding: 1rem;
+}
+
+textarea {
+  resize: none;
+  width: 80%;
+  height: 80px;
+  border-radius: 0.4rem;
+  border-color: var(--color-light-gray);
+  padding: 10px 20px;
+  font-family: "Rubik";
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-grayish-blue);
+}
+
+.comment-reply button {
+  border-radius: 0.3rem;
+  border: none;
+  background-color: var(--color-moderate-blue);
+  width: 15%;
+  height: 40px;
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.you {
+  border: none;
+  background-color: var(--color-moderate-blue);
+  color: var(--color-white);
+  padding: 2px 6px;
+}
+
+.modify-comment {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.delete,
+.edit {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.delete p{
+  color: var(--color-soft-red);
+}
+
+
+/* Active states */
+
+.reply-button p:hover{
+  color: var(--color-light-grayish-blue);
+}
+.reply-button-onhover:hover{
+  fill: hsl(239, 57%, 85%);
 }
