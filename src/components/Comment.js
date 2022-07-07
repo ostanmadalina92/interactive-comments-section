@@ -1,8 +1,21 @@
 import React from "react";
+import { useState } from "react";
 
 const data = require("../data.json");
 
 function Comment() {
+
+const [click, setClick] = useState(false);
+const [replyClick, setReplyClick] =  useState(false);
+
+const handleClick = () => {
+  setClick(true);
+};
+
+const handleReplyClick = () => {
+  setReplyClick(true);
+}
+
   return (
     <div className="comments-list">
       <div className="comment">
@@ -18,7 +31,7 @@ function Comment() {
               <p className="username">{data.comments[0].user.username}</p>
               <p className="createdAt">{data.comments[0].createdAt}</p>
             </div>
-            <div className="reply-button">
+            <div className="reply-button" onClick={handleClick}>
               <img src="/images/icon-reply.svg" />
               <p className="reply">Reply</p>
             </div>
@@ -26,6 +39,14 @@ function Comment() {
           <div className="text">{data.comments[0].content}</div>
         </div>
       </div>
+
+      {click === true && (
+        <div className="comment-reply">
+          <img src={data.comments[1].replies[1].user.image.png} />
+          <textarea placeholder="Add a comment..."></textarea>
+          <button>Reply</button>
+        </div>
+      )}
 
       <div className="comment">
         <div className="plus-minus">
@@ -72,7 +93,7 @@ function Comment() {
                     {data.comments[1].replies[0].createdAt}
                   </p>
                 </div>
-                <div className="reply-button">
+                <div className="reply-button" onClick={handleReplyClick}>
                   <img src="/images/icon-reply.svg" />
                   <p className="reply">Reply</p>
                 </div>
@@ -80,6 +101,14 @@ function Comment() {
               <div className="text">{data.comments[1].replies[0].content}</div>
             </div>
           </div>
+
+          {replyClick === true && (
+            <div className="comment-reply">
+              <img src={data.comments[1].replies[1].user.image.png} />
+              <textarea placeholder="Add a comment..."></textarea>
+              <button>Reply</button>
+            </div>
+          )}
 
           <div className="comment">
             <div className="plus-minus">
@@ -114,12 +143,6 @@ function Comment() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="comment-reply">
-        <img src={data.comments[1].replies[1].user.image.png} />
-        <textarea placeholder="Add a comment..."></textarea>
-        <button>Send</button>
       </div>
     </div>
   );
